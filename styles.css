@@ -12,8 +12,8 @@ body {
     --secondary-text-color: #5c5c62;
     --durability-text-color: #6a737d9c;
     --icon-color: #6a737d;
-    --border-color: #ff9a0045;
-    --text-decoration-color: #ff9a00;
+    --border-color: #00aaa0;
+    --text-decoration-color: #8ed2c9;
 }
 
 .container {
@@ -54,10 +54,6 @@ body {
         flex-direction: column;
     }
 
-    .contact_info_container {
-        align-items: center;
-    }
-
     .contact-info__block:not(:last-child) {
         margin-bottom: 20px;
     }
@@ -66,6 +62,11 @@ body {
         margin-right: 0;
     }
 }
+
+.contact_info_container {
+    align-items: center;
+}
+
 .contact-info__header,
 .contact-info__sub-header {
     text-align: center;
@@ -91,6 +92,7 @@ body {
 
 .contact-info__block--center {
     justify-content: center;
+    position: relative;
 }
 
 .contact-info__item {
@@ -128,6 +130,31 @@ body {
     border: 3px solid;
     border-color: var(--text-decoration-color);
 }
+
+.tooltip {
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+    left: 90px;
+    top: 90px;
+    width: max-content;
+    color: var(--secondary-text-color);
+    background-color: var(--text-decoration-color);
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.contact-info__block--center:hover .tooltip{
+    visibility: visible;
+}
+
+@media (hover: none) {
+    .contact-info__block--center:hover .tooltip{
+        visibility: hidden;
+    }
+}
+
 .intro {
     display: flex;
     justify-content: start;
@@ -152,6 +179,13 @@ body {
 .intro_text {
     color: var(--secondary-text-color);
     text-align: justify;
+    min-height: 48px;
+}
+
+@media screen and (max-width: 764px) {
+    m.intro_text {
+        min-height: 96px;
+    }
 }
 
 .skills__header {
