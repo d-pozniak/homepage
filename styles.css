@@ -54,10 +54,6 @@ body {
         flex-direction: column;
     }
 
-    .contact_info_container {
-        align-items: center;
-    }
-
     .contact-info__block:not(:last-child) {
         margin-bottom: 20px;
     }
@@ -66,6 +62,11 @@ body {
         margin-right: 0;
     }
 }
+
+.contact_info_container {
+    align-items: center;
+}
+
 .contact-info__header,
 .contact-info__sub-header {
     text-align: center;
