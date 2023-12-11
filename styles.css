@@ -92,6 +92,7 @@ body {
 
 .contact-info__block--center {
     justify-content: center;
+    position: relative;
 }
 
 .contact-info__item {
@@ -129,6 +130,31 @@ body {
     border: 3px solid;
     border-color: var(--text-decoration-color);
 }
+
+.tooltip {
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+    left: 90px;
+    top: 90px;
+    width: max-content;
+    color: var(--secondary-text-color);
+    background-color: var(--text-decoration-color);
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.contact-info__block--center:hover .tooltip{
+    visibility: visible;
+}
+
+@media (hover: none) {
+    .contact-info__block--center:hover .tooltip{
+        visibility: hidden;
+    }
+}
+
 .intro {
     display: flex;
     justify-content: start;
@@ -153,6 +179,13 @@ body {
 .intro_text {
     color: var(--secondary-text-color);
     text-align: justify;
+    min-height: 48px;
+}
+
+@media screen and (max-width: 764px) {
+    m.intro_text {
+        min-height: 96px;
+    }
 }
 
 .skills__header {
